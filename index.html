@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>QR код</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  body{ font-family:Arial; background:#f2f4f7; display:flex; justify-content:center; padding:40px; }
+  .card{ background:#fff; padding:28px; border-radius:12px; text-align:center; }
+  h1{ color:#1a56db; }
+  input{ width:100%; padding:10px; margin-bottom:14px; border-radius:8px; border:1px solid #ccc; }
+  button{ width:100%; padding:12px; background:#1a56db; color:#fff; border:none; border-radius:8px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>QR Generator</h1>
+  <input id="link" value="https://example.com">
+  <button onclick="qr()">Сгенерировать</button>
+  <div id="qr"></div>
+</div>
+
+<script>
+function qr(){
+  document.getElementById("qr").innerHTML = "";
+  new QRCode(document.getElementById("qr"), document.getElementById("link").value);
+}
+qr();
+</script>
+
+</body>
+</html>
